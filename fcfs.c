@@ -17,9 +17,9 @@ void main()
 	
 	for(i=0;i<n;i++)
 	{
-		printf("enter process%d name:\n",i+1);
-		scanf("%s",&p[i][5]);
-		printf("enter process time");
+		printf("enter %d process name : ",i+1);
+		scanf("%s",&*p[i]);
+		printf("enter process time : ");
 		scanf("%d",&pt[i]);
 	}
  
@@ -27,16 +27,16 @@ void main()
 	
 	for(i=1;i<n;i++)
 	{
-		wt[i]=wt[i-1]+et[i-1];
+		wt[i]=wt[i-1]+pt[i-1];
 		tot=tot+wt[i];
 	}
 	
 	avg=(float)tot/n;
 	
-	printf("p_name\t P_time\t w_time\n");
+	printf("p_name\t P_time\t w_time\t T_time\n");
 	
 	for(i=0;i<n;i++)
-		printf("%s\t%d\t%d\n",p[i],et[i],wt[i]);
+		printf("%s\t%d\t%d\t%d\n",p[i],pt[i],wt[i],pt[i]+wt[i]);
 	
 	printf("total waiting time=%d\n avg waiting time=%f",tot,avg);
 
