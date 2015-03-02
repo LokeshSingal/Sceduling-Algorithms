@@ -4,7 +4,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
 void main()
 {
 	char p[10][5],temp[5];
@@ -13,8 +12,6 @@ void main()
 	
 	printf("enter no of processes:");
 	scanf("%d",&n);
-	
-	
 	for(i=0;i<n;i++)
 	{
 		printf("enter %d process name : ",i+1);
@@ -22,9 +19,7 @@ void main()
 		printf("enter process time : ");
 		scanf("%d",&pt[i]);
 	}
-	
-	
-	
+
 	for(i=0;i<n-1;i++)
 	{
 		for(j=i+1;j<n;j++)
@@ -40,7 +35,7 @@ void main()
 			}
 		}
 	}
-
+	
 	wt[0]=0;
 	
 	for(i=1;i<n;i++)
@@ -50,16 +45,11 @@ void main()
 	}
 	
 	avg=(float)tot/n;
-	
 	printf("\n\np_name\t P_time\t w_time\t T_time\n");
 	
 	for(i=0;i<n;i++)
 		printf("%s\t%d\t%d\t%d\n",p[i],pt[i],wt[i],pt[i]+wt[i]);
 	
 	printf("\nTotal waiting time=%d\n Average waiting time=%f",tot,avg);
-
-	
-
-	
-
 }
+
